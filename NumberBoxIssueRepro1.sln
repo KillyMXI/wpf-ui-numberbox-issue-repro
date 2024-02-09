@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberBoxIssueRepro1", "NumberBoxIssueRepro1.csproj", "{218C9663-6F9F-40CD-AFEF-C05356B86C7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{218C9663-6F9F-40CD-AFEF-C05356B86C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{218C9663-6F9F-40CD-AFEF-C05356B86C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{218C9663-6F9F-40CD-AFEF-C05356B86C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{218C9663-6F9F-40CD-AFEF-C05356B86C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B10B510B-56C6-4480-B40E-BBE2B44C534E}
+	EndGlobalSection
+EndGlobal

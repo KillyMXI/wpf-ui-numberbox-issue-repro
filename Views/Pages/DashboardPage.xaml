@@ -1,0 +1,232 @@
+﻿<Page x:Class="NumberBoxIssueRepro1.Views.Pages.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:NumberBoxIssueRepro1.Views.Pages"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="DashboardPage"
+      d:DataContext="{d:DesignInstance local:DashboardPage,
+                                       IsDesignTimeCreatable=False}"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+      ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      mc:Ignorable="d">
+    <StackPanel>
+
+        <Label Margin="0,0,0,10"
+               HorizontalAlignment="Center"
+               Content="NumberBox - bind by Value"
+               FontSize="24"
+               FontWeight="Bold" />
+
+        <Grid VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Text="ui:NumberBox" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Text="Text" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="0"
+                       Text="Value" />
+            <TextBlock Grid.Row="4"
+                       Grid.Column="0"
+                       Text="ViewModel" />
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Text="Lost Focus" />
+            <ui:NumberBox x:Name="lostFocusNumberBox"
+                          Grid.Row="1"
+                          Grid.Column="1"
+                          Value="{Binding ViewModel.LostFocusValue, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="1"
+                       Text="{Binding ElementName=lostFocusNumberBox, Path=Text, Mode=OneWay}" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="1"
+                       Text="{Binding ElementName=lostFocusNumberBox, Path=Value, Mode=OneWay}" />
+            <TextBlock Grid.Row="4"
+                       Grid.Column="1"
+                       Text="{Binding ViewModel.LostFocusValue, Mode=OneWay}" />
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="2"
+                       Text="Property Changed" />
+            <ui:NumberBox x:Name="propertyChangedNumberBox"
+                          Grid.Row="1"
+                          Grid.Column="2"
+                          Value="{Binding ViewModel.PropertyChangeValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="2"
+                       Text="{Binding ElementName=propertyChangedNumberBox, Path=Text, Mode=OneWay}" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="2"
+                       Text="{Binding ElementName=propertyChangedNumberBox, Path=Value, Mode=OneWay}" />
+            <TextBlock Grid.Row="4"
+                       Grid.Column="2"
+                       Text="{Binding ViewModel.PropertyChangeValue, Mode=OneWay}" />
+
+            <ui:TextBox Grid.Row="1"
+                        Grid.Column="3"
+                        PlaceholderText="focus parking" />
+
+        </Grid>
+
+        <Label Margin="0,20,0,10"
+               HorizontalAlignment="Center"
+               Content="NumberBox - bind by Text"
+               FontSize="24"
+               FontWeight="Bold" />
+
+        <Grid Margin="0,20,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Text="ui:NumberBox" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Text="Text" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="0"
+                       Text="Value" />
+            <TextBlock Grid.Row="4"
+                       Grid.Column="0"
+                       Text="ViewModel" />
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Text="Lost Focus" />
+            <ui:NumberBox x:Name="lostFocusNumberBox2"
+                          Grid.Row="1"
+                          Grid.Column="1"
+                          Text="{Binding ViewModel.LostFocusString, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="1"
+                       Text="{Binding ElementName=lostFocusNumberBox2, Path=Text, Mode=OneWay}" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="1"
+                       Text="{Binding ElementName=lostFocusNumberBox2, Path=Value, Mode=OneWay}" />
+            <TextBlock Grid.Row="4"
+                       Grid.Column="1"
+                       Text="{Binding ViewModel.LostFocusString, Mode=OneWay}" />
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="2"
+                       Text="Property Changed" />
+            <ui:NumberBox x:Name="propertyChangedNumberBox2"
+                          Grid.Row="1"
+                          Grid.Column="2"
+                          Text="{Binding ViewModel.PropertyChangeString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="2"
+                       Text="{Binding ElementName=propertyChangedNumberBox2, Path=Text, Mode=OneWay}" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="2"
+                       Text="{Binding ElementName=propertyChangedNumberBox2, Path=Value, Mode=OneWay}" />
+            <TextBlock Grid.Row="4"
+                       Grid.Column="2"
+                       Text="{Binding ViewModel.PropertyChangeString, Mode=OneWay}" />
+
+            <ui:TextBox Grid.Row="1"
+                        Grid.Column="3"
+                        PlaceholderText="focus parking" />
+
+        </Grid>
+
+        <Label Margin="0,20,0,10"
+               HorizontalAlignment="Center"
+               Content="TextBox bind by Text"
+               FontSize="24"
+               FontWeight="Bold" />
+
+        <Grid Margin="0,20,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Text="ui:TextBox" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Text="Text" />
+            <TextBlock Grid.Row="4"
+                       Grid.Column="0"
+                       Text="ViewModel" />
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Text="Lost Focus" />
+            <ui:TextBox x:Name="lostFocusTextBox"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Text="{Binding ViewModel.LostFocusString2, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="1"
+                       Text="{Binding ElementName=lostFocusTextBox, Path=Text, Mode=OneWay}" />
+            <TextBlock Grid.Row="4"
+                       Grid.Column="1"
+                       Text="{Binding ViewModel.LostFocusString2, Mode=OneWay}" />
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="2"
+                       Text="Property Changed" />
+            <ui:TextBox x:Name="propertyChangedTextBox"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Text="{Binding ViewModel.PropertyChangeString2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="2"
+                       Text="{Binding ElementName=propertyChangedTextBox, Path=Text, Mode=OneWay}" />
+            <TextBlock Grid.Row="4"
+                       Grid.Column="2"
+                       Text="{Binding ViewModel.PropertyChangeString2, Mode=OneWay}" />
+
+            <ui:TextBox Grid.Row="1"
+                        Grid.Column="3"
+                        PlaceholderText="focus parking" />
+
+        </Grid>
+    </StackPanel>
+</Page>
